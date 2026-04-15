@@ -1,0 +1,300 @@
+﻿@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Get In Touch</h1>
+        <p class="lead">Let's discuss your project and bring your vision to life</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center bg-transparent mb-0">
+                <li class="breadcrumb-item"><a class="text-white" asp-controller="Home" asp-action="Contact">Home</a></li>
+                <li class="breadcrumb-item text-white-50 active">Contact</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <h2 class="fw-bold mb-4">Send Us a Message</h2>
+                <p class="text-muted mb-4">
+                    Fill out the form below and we'll get back to you within 24 hours during business days.
+                </p>
+
+                <form id="contactForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="company" class="form-label">Company Name</label>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Your Company">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="service" class="form-label">Service Interested In *</label>
+                            <select class="form-select" id="service" name="service" required>
+                                <option value="">-- Select a Service --</option>
+                                <option value="Website Development">Website Development</option>
+                                <option value="E-commerce Setup">E-commerce Setup</option>
+                                <option value="Brand Identity">Brand Identity</option>
+                                <option value="SEO Optimization">SEO Optimization</option>
+                                <option value="Website Maintenance">Website Maintenance</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="budget" class="form-label">Estimated Budget</label>
+                            <select class="form-select" id="budget" name="budget">
+                                <option value="">-- Select Budget Range --</option>
+                                <option value="Under $500">Under $500</option>
+                                <option value="$500 - $1,000">$500 - $1,000</option>
+                                <option value="$1,000 - $2,000">$1,000 - $2,000</option>
+                                <option value="$2,000 - $5,000">$2,000 - $5,000</option>
+                                <option value="Over $5,000">Over $5,000</option>
+                            </select>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="message" class="form-label">Message *</label>
+                            <textarea class="form-control" id="message" name="message" rows="6"
+                                      placeholder="Tell us about your project, goals, and timeline..." required></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                                <label class="form-check-label" for="acceptTerms">
+                                    I agree to the <a class="text-primary" asp-controller="Home" asp-action="Privacy">privacy policy</a> and
+                                    <a class="text-primary" asp-controller="Home" asp-action="Terms">terms of service</a> *
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-lg px-5">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-lg-5">
+                <div class="sticky-top" style="top: 100px;">
+                    <h3 class="fw-bold mb-4">Other Ways to Reach Us</h3>
+
+                    <!-- Contact Methods -->
+                    <div class="mb-4">
+                        <div class="d-flex align-items-start mb-3 p-3 bg-light rounded">
+                            <div class="flex-shrink-0 me-3">
+                                <div class="contact-icon-circle">
+                                    <i class="fas fa-envelope fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Email</h6>
+                                <p class="mb-0 text-muted">hello@cornerstonedigital.com</p>
+                                <small class="text-muted">We respond within 24 hours</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3 p-3 bg-light rounded">
+                            <div class="flex-shrink-0 me-3">
+                                <div class="contact-icon-circle">
+                                    <i class="fas fa-phone fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Phone</h6>
+                                <p class="mb-0 text-muted">+1 (555) 123-4567</p>
+                                <small class="text-muted">Mon-Fri, 9am-6pm EST</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3 p-3 bg-light rounded">
+                            <div class="flex-shrink-0 me-3">
+                                <div class="contact-icon-circle">
+                                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Location</h6>
+                                <p class="mb-0 text-muted">Your City, Your Country</p>
+                                <small class="text-muted">Local service, global reach</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3 p-3 bg-light rounded">
+                            <div class="flex-shrink-0 me-3">
+                                <div class="contact-icon-circle">
+                                    <i class="fas fa-calendar fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1">
+                                <h6 class="fw-bold mb-1">Schedule a Call</h6>
+                                <button class="btn btn-sm btn-outline-primary mt-2">
+                                    Book Consultation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Response Time Card -->
+                    <div class="card border-0 bg-primary text-white shadow">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">
+                                <i class="fas fa-clock me-2"></i>Response Time
+                            </h5>
+                            <p class="mb-0">
+                                We typically respond to all inquiries within 24 hours during business days.
+                                For urgent matters, please call us directly.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="mt-4">
+                        <h6 class="fw-bold mb-3">Follow Us</h6>
+                        <div class="d-flex gap-3">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+    <div class="container py-4">
+        <h2 class="text-center fw-bold mb-5">Frequently Asked Questions</h2>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                How long does it take to build a website?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Typically 2-4 weeks for a basic website, 4-8 weeks for e-commerce.
+                                Timeline depends on your specific requirements and content readiness.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2">
+                                What's included in your packages?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                All packages include responsive design, SEO basics, contact forms,
+                                and support period. Specific features vary by package tier.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Do you offer payment plans?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! We offer flexible payment plans. Typically 50% upfront and 50%
+                                upon completion, but we can work with your budget.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                budget: document.getElementById('budget').value,
+                message: document.getElementById('message').value
+            };
+
+            // Log to console (for now - you'll replace this with backend call later)
+            console.log('Form submitted:', formData);
+
+            // Show success message and redirect
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+
+            // Redirect to thank you page (optional)
+            // window.location.href = '@Url.Action("ThankYou", "Home")';
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+}
+
+<style>
+    .contact-icon-circle {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-maroon) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+</style>

@@ -1,0 +1,134 @@
+﻿@model List<CornerstoneDigital.Models.ServicePackage>
+@{
+    ViewData["Title"] = "Manage Packages";
+}
+
+<style>
+    .admin-sidebar {
+        background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+        min-height: 100vh;
+        padding: 20px;
+        position: fixed;
+        width: 250px;
+    }
+
+        .admin-sidebar a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+            .admin-sidebar a:hover, .admin-sidebar a.active {
+                background: rgba(201, 169, 97, 0.3);
+            }
+
+    .admin-content {
+        margin-left: 270px;
+        padding: 30px;
+    }
+</style>
+
+<div class="admin-sidebar">
+    <div class="text-center mb-4">
+        <h4 class="text-white fw-bold">CORNERSTONE</h4>
+        <p class="text-white-50 small">Admin Panel</p>
+    </div>
+    <a href="/Admin"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+    <a href="/Admin/Projects"><i class="fas fa-project-diagram me-2"></i> Projects</a>
+    <a href="/Admin/Packages" class="active"><i class="fas fa-box me-2"></i> Service Packages</a>
+    <a href="/Admin/Orders"><i class="fas fa-shopping-cart me-2"></i> Orders</a>
+    <a href="/Admin/Testimonials"><i class="fas fa-star me-2"></i> Testimonials</a>
+    <hr style="border-color: rgba(255,255,255,0.3);">
+    <a href="/"><i class="fas fa-globe me-2"></i> View Website</a>
+</div>
+
+<div class="admin-content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold mb-0">Service Packages</h2>
+            <p class="text-muted">Manage pricing and features</p>
+        </div>
+        <a href="/Admin/CreatePackage" class="btn btn-primary">
+            <i class="fas fa-plus me-2"></i>Add New Package
+        </a>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            <i class="fas fa-check-circle me-2"></i>@TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            @if (Model.Count > 0)
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Package</th>
+                                <th>Price</th>
+                                <th>Delivery</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var pkg in Model)
+                            {
+                                <tr>
+                                    <td><span class="badge bg-primary">@pkg.ServiceType</span></td>
+                                    <td>
+                                        <strong>@pkg.PackageName</strong>
+                                        @if (pkg.IsFeatured)
+                                        {
+                                            <span class="badge bg-warning text-dark ms-2">Featured</span>
+                                        }
+                                    </td>
+                                    <td><strong>$@pkg.Price.ToString("N2")</strong></td>
+                                    <td>@pkg.DeliveryTime</td>
+                                    <td>
+                                        @if (pkg.IsActive)
+                                        {
+                                            <span class="badge bg-success">Active</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">Inactive</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/Admin/EditPackage/@pkg.Id" class="btn btn-sm btn-outline-primary">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="/Admin/DeletePackage/@pkg.Id" class="btn btn-sm btn-outline-danger"
+                                               onclick="return confirm('Delete this package?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="text-center py-5">
+                    <i class="fas fa-box-open fa-4x text-muted mb-3"></i>
+                    <h5 class="text-muted">No packages yet</h5>
+                    <a href="/Admin/CreatePackage" class="btn btn-primary mt-3">Create First Package</a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

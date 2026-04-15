@@ -1,0 +1,385 @@
+﻿@{
+    ViewData["Title"] = "Our Services";
+}
+
+<style>
+    .service-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: white;
+        box-shadow: 0 2px 10px rgba(107, 46, 62, 0.1);
+    }
+
+        .service-nav a {
+            color: #6B2E3E;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+            .service-nav a:hover {
+                color: #C9A961;
+            }
+
+    .section-anchor {
+        scroll-margin-top: 100px;
+    }
+</style>
+
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Our Services</h1>
+        <p class="lead">Comprehensive digital solutions tailored for small businesses</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center bg-transparent mb-0">
+                <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+                <li class="breadcrumb-item text-white-50 active">Services</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Quick Navigation -->
+<div class="service-nav py-3">
+    <div class="container">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#website-development">
+                <i class="fas fa-laptop-code me-2"></i>Website Development
+            </a>
+            <a href="#ecommerce-setup">
+                <i class="fas fa-store me-2"></i>E-commerce Setup
+            </a>
+            <a href="#brand-identity">
+                <i class="fas fa-palette me-2"></i>Brand Identity
+            </a>
+            <a href="#seo-optimization">
+                <i class="fas fa-search me-2"></i>SEO Optimization
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Services Overview -->
+<section class="py-5 bg-light">
+    <div class="container py-4">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <h2 class="display-5 fw-bold mb-4">What We Offer</h2>
+                <p class="lead text-muted mb-4">
+                    We provide end-to-end digital solutions designed specifically for small businesses
+                    looking to establish or enhance their online presence.
+                </p>
+                <div class="d-flex align-items-start mb-3">
+                    <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                    <div>
+                        <h5 class="fw-bold">Affordable Pricing</h5>
+                        <p class="text-muted">Transparent packages that fit small business budgets</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start mb-3">
+                    <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                    <div>
+                        <h5 class="fw-bold">Fast Delivery</h5>
+                        <p class="text-muted">Most projects completed within 2-4 weeks</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success fa-2x me-3"></i>
+                    <div>
+                        <h5 class="fw-bold">Ongoing Support</h5>
+                        <p class="text-muted">We're here even after your project launches</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5 text-center">
+                        <i class="fas fa-handshake fa-4x text-primary mb-4"></i>
+                        <h4 class="fw-bold mb-3">Not Sure Where to Start?</h4>
+                        <p class="text-muted mb-4">
+                            Schedule a free consultation and we'll help you find the perfect
+                            solution for your business needs.
+                        </p>
+                        <a asp-controller="Home" asp-action="Contact" class="btn btn-primary btn-lg">Book Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Website Development Service -->
+<section id="website-development" class="py-5 section-anchor">
+    <div class="container py-4">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="service-image-placeholder bg-light rounded p-5 text-center">
+                    <i class="fas fa-laptop-code fa-5x text-primary mb-3"></i>
+                    <h4>Website Development</h4>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <span class="badge bg-primary mb-3">MOST POPULAR</span>
+                <h2 class="display-6 fw-bold mb-4">Website Development</h2>
+                <p class="lead text-muted mb-4">
+                    Custom, responsive websites that look professional and convert visitors into customers.
+                </p>
+
+                <h5 class="fw-bold mb-3">What's Included:</h5>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Fully responsive design (mobile, tablet, desktop)</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Custom design tailored to your brand</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Contact forms and email integration</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Basic SEO optimization</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Social media integration</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Google Analytics setup</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> 3 months of support</li>
+                </ul>
+
+                <!-- Pricing Packages -->
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">BASIC</h6>
+                                <h3 class="fw-bold text-primary">$499</h3>
+                                <p class="small text-muted">5 Pages</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="website" asp-route-package="basic" class="btn btn-outline-primary btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary bg-primary text-white h-100 position-relative">
+                            <span class="position-absolute top-0 start-50 translate-middle badge bg-warning text-dark">
+                                POPULAR
+                            </span>
+                            <div class="card-body text-center">
+                                <h6 class="text-white-50">STANDARD</h6>
+                                <h3 class="fw-bold">$999</h3>
+                                <p class="small text-white-50">10 Pages</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="website" asp-route-package="standard" class="btn btn-light btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">PREMIUM</h6>
+                                <h3 class="fw-bold text-primary">$1,999</h3>
+                                <p class="small text-muted">Unlimited</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="website" asp-route-package="premium" class="btn btn-outline-primary btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<!-- E-commerce Service -->
+<section id="ecommerce-setup" class="py-5 bg-light section-anchor">
+    <div class="container py-4">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-6 fw-bold mb-4">E-commerce Setup</h2>
+                <p class="lead text-muted mb-4">
+                    Turn your products into profit with a fully functional online store.
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4">
+                <h5 class="fw-bold mb-3">Perfect For:</h5>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Retail businesses going online</li>
+                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Service providers selling packages</li>
+                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Artisans and craftspeople</li>
+                    <li class="mb-2"><i class="fas fa-arrow-right text-primary me-2"></i> Restaurants offering delivery</li>
+                </ul>
+
+                <h5 class="fw-bold mb-3">What's Included:</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Shopping cart functionality</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Secure payment gateway (PayPal, Stripe)</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Inventory management system</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Shipping integration</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Customer accounts</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Order management</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Mobile responsive</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h5 class="fw-bold mb-3">Pricing Packages:</h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">STARTER</h6>
+                                <h3 class="fw-bold text-primary">$799</h3>
+                                <p class="small text-muted">Up to 50 Products</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="ecommerce" asp-route-package="starter" class="btn btn-outline-primary btn-sm w-100">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-primary bg-primary text-white h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-white-50">PROFESSIONAL</h6>
+                                <h3 class="fw-bold">$1,499</h3>
+                                <p class="small text-white-50">Unlimited Products</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="ecommerce" asp-route-package="professional" class="btn btn-light btn-sm w-100">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<!-- Brand Identity Service -->
+<section id="brand-identity" class="py-5 section-anchor">
+    <div class="container py-4">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-6 fw-bold mb-4">Brand Identity & Design</h2>
+                <p class="lead text-muted mb-4">
+                    Create a memorable brand that stands out and builds trust with your customers.
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6 mb-4">
+                <h5 class="fw-bold mb-3">What You'll Get:</h5>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Professional logo design</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Brand color palette</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Typography guidelines</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Brand style guide</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Business card design</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Social media templates</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Multiple file formats</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h5 class="fw-bold mb-3">Pricing Packages:</h5>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">BASIC</h6>
+                                <h3 class="fw-bold text-primary">$299</h3>
+                                <p class="small text-muted">Logo Only</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="branding" asp-route-package="basic" class="btn btn-outline-primary btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">STANDARD</h6>
+                                <h3 class="fw-bold text-primary">$599</h3>
+                                <p class="small text-muted">Logo + Extras</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="branding" asp-route-package="standard" class="btn btn-outline-primary btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-primary bg-primary text-white h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-white-50">PREMIUM</h6>
+                                <h3 class="fw-bold">$1,199</h3>
+                                <p class="small text-white-50">Complete Package</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="branding" asp-route-package="premium" class="btn btn-light btn-sm w-100">Choose Plan</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<!-- SEO Service -->
+<section id="seo-optimization" class="py-5 bg-light section-anchor">
+    <div class="container py-4">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="display-6 fw-bold mb-4">SEO Optimization</h2>
+                <p class="lead text-muted mb-4">
+                    Get found by customers searching for your services on Google. Increase organic traffic and rankings.
+                </p>
+            </div>
+        </div>
+
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4">
+                <h5 class="fw-bold mb-3">What's Included:</h5>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Keyword research & strategy</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> On-page optimization</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Technical SEO audit</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Google My Business setup</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Local citation building</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Monthly performance reports</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Ongoing optimization</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <h5 class="fw-bold mb-3">Monthly Packages:</h5>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card border-primary h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-muted">LOCAL SEO</h6>
+                                <h3 class="fw-bold text-primary">$399</h3>
+                                <p class="small text-muted">Per Month</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="seo" asp-route-package="local" class="btn btn-outline-primary btn-sm w-100">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-primary bg-primary text-white h-100">
+                            <div class="card-body text-center">
+                                <h6 class="text-white-50">ADVANCED SEO</h6>
+                                <h3 class="fw-bold">$699</h3>
+                                <p class="small text-white-50">Per Month</p>
+                                <a asp-controller="Home" asp-action="PackageDetails" asp-route-service="seo" asp-route-package="advanced" class="btn btn-light btn-sm w-100">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5 mt-5">
+    <div class="container py-5 text-center text-white">
+        <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+        <p class="lead mb-4">Choose a service or get a custom quote for your specific needs</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a class="btn btn-light btn-lg px-5" asp-controller="Home" asp-action="Quote">
+                Get a Free Quote
+            </a>
+            <a class="btn btn-outline-light btn-lg px-5" asp-controller="Home" asp-action="Contact">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>

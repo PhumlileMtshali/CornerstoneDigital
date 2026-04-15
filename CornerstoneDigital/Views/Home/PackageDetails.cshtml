@@ -1,0 +1,343 @@
+﻿@{
+    ViewData["Title"] = "Package Details";
+    var service = Context.Request.Query["service"].ToString();
+    var package = Context.Request.Query["package"].ToString();
+}
+
+<style>
+    .package-detail-card {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(107, 46, 62, 0.15);
+    }
+
+    .feature-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+    .price-badge {
+        background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    .confirm-btn {
+        background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+        border: none;
+        padding: 15px 50px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .confirm-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(107, 46, 62, 0.3);
+        }
+</style>
+
+<!-- Page Header -->
+<section class="bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Package Details</h1>
+        <p class="lead">Review your selected package before confirming</p>
+    </div>
+</section>
+
+<!-- Package Details Content -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-lg-8 mb-4">
+                <div class="card package-detail-card border-0">
+                    <div class="card-body p-5">
+                        @if (service == "website" && package == "basic")
+                        {
+                            <span class="badge bg-primary mb-3">WEBSITE DEVELOPMENT - BASIC</span>
+                            <h2 class="fw-bold mb-4">Basic Website Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Perfect for small businesses and startups looking to establish an online presence quickly and affordably.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Up to 5 custom pages</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Fully responsive design (mobile, tablet, desktop)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Contact form with email integration</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Basic SEO setup (meta tags, titles)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Social media links</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Google Analytics integration</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 3 months free support</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 2-week delivery time</li>
+                            </ul>
+                        }
+                        else if (service == "website" && package == "standard")
+                        {
+                            <span class="badge bg-warning text-dark mb-3">WEBSITE DEVELOPMENT - STANDARD (POPULAR)</span>
+                            <h2 class="fw-bold mb-4">Standard Website Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Ideal for growing businesses that need more pages and advanced features to showcase their services.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Up to 10 custom pages</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Basic package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Blog functionality with CMS</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Advanced SEO optimization</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Newsletter signup integration</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Image gallery/portfolio section</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Custom icons and graphics</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 3 months free support</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 3-week delivery time</li>
+                            </ul>
+                        }
+                        else if (service == "website" && package == "premium")
+                        {
+                            <span class="badge bg-primary mb-3">WEBSITE DEVELOPMENT - PREMIUM</span>
+                            <h2 class="fw-bold mb-4">Premium Website Package</h2>
+                            <p class="lead text-muted mb-4">
+                                For businesses that need a comprehensive web solution with unlimited pages and custom features.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Unlimited pages</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Standard package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Custom features and functionality</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Advanced animations and interactions</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Multi-language support (if needed)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Third-party API integrations</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Priority support</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 6 months free support</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 4-week delivery time</li>
+                            </ul>
+                        }
+                        else if (service == "ecommerce" && package == "starter")
+                        {
+                            <span class="badge bg-primary mb-3">E-COMMERCE - STARTER</span>
+                            <h2 class="fw-bold mb-4">Starter E-commerce Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Start selling online with a basic e-commerce store perfect for small product catalogs.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Up to 50 products</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Shopping cart functionality</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> PayPal & Stripe integration</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Basic inventory management</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Shipping rate calculator</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Order management system</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Mobile responsive design</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> SSL certificate included</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 3 months support</li>
+                            </ul>
+                        }
+                        else if (service == "ecommerce" && package == "professional")
+                        {
+                            <span class="badge bg-primary mb-3">E-COMMERCE - PROFESSIONAL</span>
+                            <h2 class="fw-bold mb-4">Professional E-commerce Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Full-featured online store with unlimited products and advanced e-commerce capabilities.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Unlimited products</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Starter package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Advanced inventory management</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Customer account system</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Wishlist functionality</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Product reviews and ratings</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Multi-currency support</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Abandoned cart recovery</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 6 months support</li>
+                            </ul>
+                        }
+                        else if (service == "branding" && package == "basic")
+                        {
+                            <span class="badge bg-primary mb-3">BRAND IDENTITY - BASIC</span>
+                            <h2 class="fw-bold mb-4">Basic Branding Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Get a professional logo to start building your brand identity.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> 3-5 logo concepts</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Up to 3 revision rounds</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Final files in PNG, JPG, SVG</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Full ownership rights</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 1-week delivery</li>
+                            </ul>
+                        }
+                        else if (service == "branding" && package == "standard")
+                        {
+                            <span class="badge bg-primary mb-3">BRAND IDENTITY - STANDARD</span>
+                            <h2 class="fw-bold mb-4">Standard Branding Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Logo design plus essential branding materials for your business.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Basic package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Brand color palette (3-5 colors)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Typography selection</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Business card design (front & back)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Letterhead design</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Email signature template</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 2-week delivery</li>
+                            </ul>
+                        }
+                        else if (service == "branding" && package == "premium")
+                        {
+                            <span class="badge bg-primary mb-3">BRAND IDENTITY - PREMIUM</span>
+                            <h2 class="fw-bold mb-4">Premium Branding Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Complete brand identity system with all materials needed for consistent branding.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included:</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Standard package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Comprehensive brand style guide</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Social media templates (5 platforms)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Brand patterns and textures</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Icon set (10 custom icons)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Presentation template</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Packaging mockups</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 3-week delivery</li>
+                            </ul>
+                        }
+                        else if (service == "seo" && package == "local")
+                        {
+                            <span class="badge bg-primary mb-3">SEO - LOCAL</span>
+                            <h2 class="fw-bold mb-4">Local SEO Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Get found by local customers searching for your services in your area.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included (Monthly):</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Local keyword research & optimization</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Google My Business optimization</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> 10 local citations per month</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> On-page SEO optimization</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Monthly performance report</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Review monitoring & responses</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Local directory submissions</li>
+                            </ul>
+                        }
+                        else if (service == "seo" && package == "advanced")
+                        {
+                            <span class="badge bg-primary mb-3">SEO - ADVANCED</span>
+                            <h2 class="fw-bold mb-4">Advanced SEO Package</h2>
+                            <p class="lead text-muted mb-4">
+                                Comprehensive SEO strategy to dominate search results and drive organic traffic.
+                            </p>
+
+                            <h5 class="fw-bold mb-3">What's Included (Monthly):</h5>
+                            <ul class="feature-list list-unstyled">
+                                <li><i class="fas fa-check text-primary me-3"></i> Everything in Local package</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Content creation (2 blog posts/month)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Link building (5 quality backlinks/month)</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Competitor analysis</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Technical SEO audit & fixes</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Schema markup implementation</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Detailed analytics & insights</li>
+                                <li><i class="fas fa-check text-primary me-3"></i> Strategy consultation calls</li>
+                            </ul>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Sidebar -->
+            <div class="col-lg-4">
+                <div class="price-badge mb-4">
+                    <h5 class="mb-3">Your Investment</h5>
+                    @if (service == "website" && package == "basic")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$499</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "website" && package == "standard")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$999</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "website" && package == "premium")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$1,999</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "ecommerce" && package == "starter")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$799</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "ecommerce" && package == "professional")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$1,499</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "branding" && package == "basic")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$299</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "branding" && package == "standard")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$599</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "branding" && package == "premium")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$1,199</h1>
+                        <p class="mb-0">One-time payment</p>
+                    }
+                    else if (service == "seo" && package == "local")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$399</h1>
+                        <p class="mb-0">Per month</p>
+                    }
+                    else if (service == "seo" && package == "advanced")
+                    {
+                        <h1 class="display-3 fw-bold mb-2">$699</h1>
+                        <p class="mb-0">Per month</p>
+                    }
+                </div>
+
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3">What Happens Next?</h5>
+                        <ol class="ps-3">
+                            <li class="mb-2">Click "Confirm Selection" below</li>
+                            <li class="mb-2">Fill out the project details form</li>
+                            <li class="mb-2">Receive a confirmation email</li>
+                            <li class="mb-2">We'll contact you within 24 hours</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-3">
+                    <a asp-controller="Home" asp-action="ConfirmPackage" asp-route-service="@service" asp-route-package="@package" class="btn btn-primary confirm-btn">
+                        <i class="fas fa-check-circle me-2"></i>Confirm Selection
+                    </a>
+                    <a asp-controller="Home" asp-action="Services" class="btn btn-outline-primary">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+/

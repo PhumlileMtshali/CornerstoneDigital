@@ -1,0 +1,278 @@
+﻿@{
+    ViewData["Title"] = "Project Details";
+    var projectId = ViewContext.RouteData.Values["id"]?.ToString() ?? "";
+
+    // Project data
+    var projects = new Dictionary<string, dynamic>
+    {
+        ["tech-startup"] = new
+        {
+            Title = "Tech Startup Landing Page",
+            Category = "Website Development",
+            Client = "TechFlow SaaS",
+            Duration = "3 Weeks",
+            Challenge = "The client needed a high-converting landing page to launch their new SaaS product and capture early adopters.",
+            Solution = "We created a modern, conversion-optimized landing page with clear value propositions, interactive demos, and strategic CTAs.",
+            Results = new[] { "300% increase in lead generation", "45% conversion rate on free trials", "Featured on Product Hunt with 500+ upvotes" },
+            Technologies = new[] { "ASP.NET Core", "Bootstrap 5", "JavaScript", "Google Analytics" },
+            ImageIcon = "laptop-code"
+        },
+        ["fashion-store"] = new
+        {
+            Title = "Boutique Fashion Store",
+            Category = "E-commerce",
+            Client = "Elegance Boutique",
+            Duration = "6 Weeks",
+            Challenge = "A physical boutique wanted to expand online with a beautiful e-commerce store that matched their luxury brand.",
+            Solution = "Built a custom e-commerce platform with 200+ products, advanced filtering, secure payments, and inventory management.",
+            Results = new[] { "$50,000 in sales first month", "2,500+ registered customers", "40% repeat purchase rate" },
+            Technologies = new[] { "ASP.NET Core", "Stripe", "PayFast", "SQL Server", "Azure" },
+            ImageIcon = "shopping-bag"
+        },
+        ["restaurant-rebrand"] = new
+        {
+            Title = "Restaurant Rebrand",
+            Category = "Brand Identity",
+            Client = "Bella Vista Restaurant",
+            Duration = "4 Weeks",
+            Challenge = "An established restaurant needed a complete rebrand to attract younger customers while maintaining their traditional base.",
+            Solution = "Developed a fresh brand identity with modern logo, new color palette, menu redesign, and responsive website.",
+            Results = new[] { "45% growth in reservations", "Instagram followers increased from 500 to 5,000", "Featured in local food magazine" },
+            Technologies = new[] { "Adobe Illustrator", "Photoshop", "HTML/CSS", "Social Media Integration" },
+            ImageIcon = "utensils"
+        },
+        ["law-firm"] = new
+        {
+            Title = "Law Firm Website",
+            Category = "Website Development",
+            Client = "Sterling & Associates Law",
+            Duration = "5 Weeks",
+            Challenge = "A law firm needed a professional website to establish credibility and attract high-value clients.",
+            Solution = "Created a sophisticated website with practice area details, attorney profiles, case studies, and a legal blog for SEO.",
+            Results = new[] { "Top 3 Google rankings for key terms", "150% increase in consultation requests", "80% reduction in unqualified leads" },
+            Technologies = new[] { "ASP.NET Core", "SEO Optimization", "Blog CMS", "Contact Forms" },
+            ImageIcon = "balance-scale"
+        },
+        ["jewelry-store"] = new
+        {
+            Title = "Handmade Jewelry Store",
+            Category = "E-commerce",
+            Client = "Artisan Gems",
+            Duration = "4 Weeks",
+            Challenge = "An artisan jeweler needed an online store to sell handmade pieces with beautiful photography and custom product options.",
+            Solution = "Built an elegant e-commerce site with product customization, high-res image galleries, and gift packaging options.",
+            Results = new[] { "500+ orders in first 3 months", "Average order value of $250", "35% international sales" },
+            Technologies = new[] { "ASP.NET Core", "PayPal", "Stripe", "Image Optimization", "Email Marketing" },
+            ImageIcon = "gem"
+        },
+        ["auto-repair"] = new
+        {
+            Title = "Auto Repair Shop Website",
+            Category = "Website Development",
+            Client = "ProFix Auto Center",
+            Duration = "3 Weeks",
+            Challenge = "An auto repair shop wanted to modernize their business with online booking and reduce phone call volume.",
+            Solution = "Developed a service-focused website with online appointment booking, service pricing, and customer review integration.",
+            Results = new[] { "40% of bookings now online", "Google reviews increased from 12 to 150+", "Phone calls reduced by 60%" },
+            Technologies = new[] { "ASP.NET Core", "Booking System", "Google Reviews API", "SMS Notifications" },
+            ImageIcon = "wrench"
+        }
+    };
+
+    var project = projects.ContainsKey(projectId) ? projects[projectId] : null;
+}
+
+@if (project == null)
+{
+    <div class="container py-5 text-center">
+        <h2>Project Not Found</h2>
+        <p>The project you're looking for doesn't exist.</p>
+        <a asp-controller="Home" asp-action="Portfolio" class="btn btn-primary">Back to Portfolio</a>
+    </div>
+}
+else
+{
+    <style>
+        .project-header {
+            background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .project-icon-large {
+            width: 150px;
+            height: 150px;
+            background: rgba(201, 169, 97, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+        }
+
+        .stats-card {
+            background: white;
+            border-left: 4px solid #C9A961;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(107, 46, 62, 0.1);
+        }
+
+        .result-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #C9A961;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+            font-size: 14px;
+        }
+    </style>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb" class="mb-4">
+                        <ol class="breadcrumb bg-transparent p-0">
+                            <li class="breadcrumb-item"><a href="/" class="text-white">Home</a></li>
+                            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Portfolio" class="text-white">Portfolio</a></li>
+                            <li class="breadcrumb-item active text-white-50">@project.Title</li>
+                        </ol>
+                    </nav>
+                    <span class="badge mb-3" style="background: #C9A961; color: #4A1F2C; font-size: 14px;">@project.Category</span>
+                    <h1 class="display-4 fw-bold mb-3">@project.Title</h1>
+                    <p class="lead mb-4">Client: @project.Client</p>
+                    <div class="d-flex gap-4">
+                        <div>
+                            <small class="text-white-50 d-block">Duration</small>
+                            <strong>@project.Duration</strong>
+                        </div>
+                        <div>
+                            <small class="text-white-50 d-block">Category</small>
+                            <strong>@project.Category</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="project-icon-large">
+                        <i class="fas fa-@project.ImageIcon fa-5x" style="color: #C9A961;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Content -->
+                <div class="col-lg-8 mb-4">
+                    <!-- Challenge -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-3" style="color: #6B2E3E;">
+                            <i class="fas fa-lightbulb me-2" style="color: #C9A961;"></i>The Challenge
+                        </h3>
+                        <p class="lead text-muted">@project.Challenge</p>
+                    </div>
+
+                    <!-- Solution -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-3" style="color: #6B2E3E;">
+                            <i class="fas fa-cogs me-2" style="color: #C9A961;"></i>Our Solution
+                        </h3>
+                        <p class="lead text-muted">@project.Solution</p>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4" style="color: #6B2E3E;">
+                            <i class="fas fa-chart-line me-2" style="color: #C9A961;"></i>Results Achieved
+                        </h3>
+                        @foreach (var result in project.Results)
+                        {
+                            <div class="result-item">
+                                <i class="fas fa-check-circle me-2" style="color: #C9A961;"></i>
+                                <strong>@result</strong>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Technologies -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4" style="color: #6B2E3E;">
+                            <i class="fas fa-tools me-2" style="color: #C9A961;"></i>Technologies Used
+                        </h3>
+                        @foreach (var tech in project.Technologies)
+                        {
+                            <span class="tech-badge">@tech</span>
+                        }
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="stats-card mb-4">
+                        <h5 class="fw-bold mb-4">Project Stats</h5>
+                        <div class="mb-3">
+                            <small class="text-muted d-block">Client</small>
+                            <strong>@project.Client</strong>
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <small class="text-muted d-block">Timeline</small>
+                            <strong>@project.Duration</strong>
+                        </div>
+                        <hr>
+                        <div class="mb-3">
+                            <small class="text-muted d-block">Category</small>
+                            <strong>@project.Category</strong>
+                        </div>
+                        <hr>
+                        <div>
+                            <small class="text-muted d-block">Status</small>
+                            <span class="badge bg-success">Completed</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Card -->
+                    <div class="card border-0 shadow-sm" style="background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);">
+                        <div class="card-body p-4 text-white text-center">
+                            <i class="fas fa-rocket fa-3x mb-3" style="color: #C9A961;"></i>
+                            <h5 class="fw-bold mb-3">Ready for Similar Results?</h5>
+                            <p class="small mb-4">Let's discuss how we can help your business grow</p>
+                            <a asp-controller="Home" asp-action="Contact" class="btn btn-light w-100 mb-2">
+                                <i class="fas fa-envelope me-2"></i>Get in Touch
+                            </a>
+                            <a asp-controller="Home" asp-action="Services" class="btn btn-outline-light w-100">
+                                <i class="fas fa-th me-2"></i>View Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold mb-4 text-center">More Projects Like This</h3>
+            <div class="text-center">
+                <a asp-controller="Home" asp-action="Portfolio" class="btn btn-primary btn-lg">
+                    <i class="fas fa-th me-2"></i>View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+}

@@ -1,0 +1,386 @@
+﻿@{
+    ViewData["Title"] = "Our Portfolio";
+}
+
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Our Work</h1>
+        <p class="lead">Real projects, real results for real businesses</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center bg-transparent mb-0">
+                <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
+                <li class="breadcrumb-item text-white-50 active">Portfolio</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Portfolio Stats -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body py-4">
+                        <i class="fas fa-project-diagram fa-3x text-primary mb-3"></i>
+                        <h2 class="fw-bold text-primary mb-2">150+</h2>
+                        <p class="text-muted mb-0">Projects Completed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body py-4">
+                        <i class="fas fa-smile fa-3x text-primary mb-3"></i>
+                        <h2 class="fw-bold text-primary mb-2">98%</h2>
+                        <p class="text-muted mb-0">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body py-4">
+                        <i class="fas fa-award fa-3x text-primary mb-3"></i>
+                        <h2 class="fw-bold text-primary mb-2">25+</h2>
+                        <p class="text-muted mb-0">Industries Served</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body py-4">
+                        <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                        <h2 class="fw-bold text-primary mb-2">2-4</h2>
+                        <p class="text-muted mb-0">Weeks Average</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Filter Buttons -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Featured Projects</h2>
+            <p class="lead text-muted mb-4">Browse our recent work across different industries</p>
+
+            <div class="btn-group flex-wrap justify-content-center" role="group">
+                <button type="button" class="btn btn-outline-primary active" data-filter="all">All Projects</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="website">Websites</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="ecommerce">E-commerce</button>
+                <button type="button" class="btn btn-outline-primary" data-filter="branding">Branding</button>
+            </div>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="row g-4">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="website">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-laptop-code fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="tech-startup" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Website</span>
+                        <h5 class="card-title fw-bold">Tech Startup Landing Page</h5>
+                        <p class="card-text text-muted">Modern, conversion-focused landing page for a SaaS startup</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-chart-line me-1"></i> 300% lead increase</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 3 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="ecommerce">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-shopping-bag fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="fashion-store" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">E-commerce</span>
+                        <h5 class="card-title fw-bold">Boutique Fashion Store</h5>
+                        <p class="card-text text-muted">Complete online store with 200+ products and payment integration</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-dollar-sign me-1"></i> $50K first month</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 6 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="branding">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-utensils fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="restaurant-rebrand" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-warning text-dark mb-2">Branding</span>
+                        <h5 class="card-title fw-bold">Restaurant Rebrand</h5>
+                        <p class="card-text text-muted">Complete brand identity refresh with logo, menu design, and website</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-users me-1"></i> 45% growth</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 4 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="website">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-balance-scale fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="law-firm" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Website</span>
+                        <h5 class="card-title fw-bold">Law Firm Website</h5>
+                        <p class="card-text text-muted">Professional website with practice areas, attorney profiles, and blog</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-search me-1"></i> Top 3 Google</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 5 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="ecommerce">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-gem fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="jewelry-store" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-success mb-2">E-commerce</span>
+                        <h5 class="card-title fw-bold">Handmade Jewelry Store</h5>
+                        <p class="card-text text-muted">Beautiful online store showcasing artisan jewelry with custom filters</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-shopping-cart me-1"></i> 500+ orders</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 4 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-md-6 col-lg-4 portfolio-item" data-category="website">
+                <div class="card border-0 shadow-sm h-100 portfolio-card">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-image bg-gradient p-5 text-center">
+                            <i class="fas fa-wrench fa-5x text-white"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <a asp-controller="Home" asp-action="ProjectDetails" asp-route-id="auto-repair" class="btn btn-light btn-sm">
+                                <i class="fas fa-eye me-2"></i>View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">Website</span>
+                        <h5 class="card-title fw-bold">Auto Repair Shop</h5>
+                        <p class="card-text text-muted">Service-focused website with online booking and customer reviews</p>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted"><i class="fas fa-calendar-check me-1"></i> 40% bookings</small>
+                            <small class="text-muted"><i class="fas fa-calendar me-1"></i> 3 weeks</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Client Testimonials -->
+<section class="py-5 bg-light">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Client Success Stories</h2>
+            <p class="lead text-muted">Hear directly from businesses we've helped</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text fst-italic mb-4">
+                            "After being scammed by two other developers, Cornerstone Digital restored my faith.
+                            They delivered exactly what they promised, on time and on budget."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-placeholder me-3">
+                                <i class="fas fa-user fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">David Martinez</h6>
+                                <small class="text-muted">Auto Repair Shop Owner</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text fst-italic mb-4">
+                            "Our online store has been a game-changer. We went from craft fairs to nationwide
+                            shipping in just three months. Best investment we ever made."
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-placeholder me-3">
+                                <i class="fas fa-user fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Sarah Chen</h6>
+                                <small class="text-muted">Jewelry Designer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border-0 shadow h-100">
+                    <div class="card-body p-4">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p class="card-text fst-italic mb-4">
+                            "They're not just developers, they're partners. They understood our vision and
+                            brought it to life better than we imagined. Highly recommend!"
+                        </p>
+                        <div class="d-flex align-items-center">
+                            <div class="avatar-placeholder me-3">
+                                <i class="fas fa-user fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Marcus Thompson</h6>
+                                <small class="text-muted">Restaurant Owner</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container py-5 text-center text-white">
+        <h2 class="display-5 fw-bold mb-4">Ready to Be Our Next Success Story?</h2>
+        <p class="lead mb-4">Let's create something amazing together</p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="#" class="btn btn-light btn-lg px-5">
+                <i class="fas fa-rocket me-2"></i>Start Your Project
+            </a>
+            <a href="#" class="btn btn-outline-light btn-lg px-5">
+                <i class="fas fa-calendar me-2"></i>Schedule Consultation
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio-image {
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-burgundy) 100%);
+    }
+
+    .portfolio-card {
+        transition: all 0.3s ease;
+    }
+
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+        }
+
+    .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(107, 46, 62, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+        opacity: 1;
+    }
+
+    .bg-gradient {
+        background: linear-gradient(135deg, var(--primary-maroon) 0%, var(--primary-burgundy) 50%, var(--burgundy-light) 100%);
+    }
+</style>

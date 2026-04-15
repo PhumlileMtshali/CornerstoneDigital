@@ -1,0 +1,288 @@
+﻿@{
+    ViewData["Title"] = "Payment Successful";
+}
+
+<style>
+    .success-container {
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .success-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(107, 46, 62, 0.2);
+        padding: 60px;
+        text-align: center;
+        max-width: 700px;
+        animation: slideUp 0.6s ease-out;
+    }
+
+    .success-icon {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        animation: scaleIn 0.5s ease-out;
+    }
+
+        .success-icon i {
+            font-size: 60px;
+            color: white;
+        }
+
+    .checkmark {
+        animation: checkmark 0.8s ease-in-out 0.3s forwards;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+    }
+
+    @@keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@keyframes scaleIn {
+        from {
+            transform: scale(0);
+        }
+
+        to {
+            transform: scale(1);
+        }
+    }
+
+    @@keyframes checkmark {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    .order-number {
+        background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin: 20px 0;
+    }
+
+    .next-steps-card {
+        background: #f8f9fa;
+        border-left: 4px solid #C9A961;
+        padding: 20px;
+        text-align: left;
+        margin: 30px 0;
+    }
+
+    .action-buttons .btn {
+        margin: 10px;
+        padding: 12px 30px;
+        font-weight: 600;
+    }
+</style>
+
+<section class="success-container">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="success-card">
+                    <!-- Success Icon -->
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+
+                    <!-- Success Message -->
+                    <h1 class="display-4 fw-bold mb-3" style="color: #28a745;">Payment Successful!</h1>
+                    <p class="lead text-muted mb-4">
+                        Thank you for choosing Cornerstone Digital. Your payment has been processed successfully.
+                    </p>
+
+                    <!-- Order Number -->
+                    <div class="order-number">
+                        <p class="mb-2 small">Order Reference Number</p>
+                        <h3 class="fw-bold mb-0" style="color: #C9A961;">
+                            #ORD-@DateTime.Now.ToString("yyyyMMdd")-@(new Random().Next(1000, 9999))
+                        </h3>
+                    </div>
+
+                    <!-- Confirmation Details -->
+                    <div class="alert alert-success mt-4">
+                        <i class="fas fa-envelope me-2"></i>
+                        <strong>Confirmation email sent!</strong> Check your inbox for order details and receipt.
+                    </div>
+
+                    <!-- What Happens Next -->
+                    <div class="next-steps-card">
+                        <h5 class="fw-bold mb-3"><i class="fas fa-list-check me-2 text-primary"></i>What Happens Next?</h5>
+                        <div class="row text-start">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <div class="bg-primary text-white rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">1</div>
+                                    </div>
+                                    <div>
+                                        <strong>Within 2 Hours</strong>
+                                        <p class="small text-muted mb-0">You'll receive a welcome email with next steps</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <div class="bg-primary text-white rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">2</div>
+                                    </div>
+                                    <div>
+                                        <strong>Within 24 Hours</strong>
+                                        <p class="small text-muted mb-0">Your dedicated project manager will contact you</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <div class="bg-primary text-white rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">3</div>
+                                    </div>
+                                    <div>
+                                        <strong>Project Kickoff</strong>
+                                        <p class="small text-muted mb-0">We'll schedule a consultation call to discuss details</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <div class="bg-primary text-white rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold;">4</div>
+                                    </div>
+                                    <div>
+                                        <strong>Project Begins</strong>
+                                        <p class="small text-muted mb-0">We start working on your project right away</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons mt-4">
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">
+                            <i class="fas fa-home me-2"></i>Back to Home
+                        </a>
+                        <a asp-controller="Home" asp-action="Portfolio" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-images me-2"></i>View Our Work
+                        </a>
+                    </div>
+
+                    <!-- Contact Support -->
+                    <div class="mt-5 pt-4 border-top">
+                        <h6 class="fw-bold mb-3">Need Immediate Assistance?</h6>
+                        <p class="text-muted small mb-3">Our support team is here to help</p>
+                        <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            <a href="mailto:support@cornerstonedigital.com" class="text-decoration-none">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                <span>support@cornerstonedigital.com</span>
+                            </a>
+                            <a href="tel:+27XXXXXXXXX" class="text-decoration-none">
+                                <i class="fas fa-phone text-primary me-2"></i>
+                                <span>+27 XX XXX XXXX</span>
+                            </a>
+                            <a asp-controller="Home" asp-action="Contact" class="text-decoration-none">
+                                <i class="fas fa-comment text-primary me-2"></i>
+                                <span>Live Chat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Info Cards -->
+                <div class="row mt-5 text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <i class="fas fa-headset fa-3x text-primary mb-3"></i>
+                                <h6 class="fw-bold">24/7 Support</h6>
+                                <p class="small text-muted mb-0">We're here whenever you need us</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                                <h6 class="fw-bold">100% Satisfaction</h6>
+                                <p class="small text-muted mb-0">Money-back guarantee on all projects</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                                <h6 class="fw-bold">On-Time Delivery</h6>
+                                <p class="small text-muted mb-0">We meet deadlines, guaranteed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Proof -->
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-2">Join over 500+ satisfied clients</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <span class="ms-2 fw-bold">4.9/5.0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Confetti Animation (Optional) -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script>
+    // Trigger confetti on page load
+    window.onload = function() {
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#6B2E3E', '#C9A961', '#28a745']
+        });
+
+        // Second burst
+        setTimeout(() => {
+            confetti({
+                particleCount: 50,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#6B2E3E', '#C9A961', '#28a745']
+            });
+            confetti({
+                particleCount: 50,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#6B2E3E', '#C9A961', '#28a745']
+            });
+        }, 250);
+    };
+</script>

@@ -1,0 +1,508 @@
+﻿@{
+    ViewData["Title"] = "Pricing";
+}
+
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Transparent Pricing</h1>
+        <p class="lead">Affordable packages designed for small businesses</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center bg-transparent mb-0">
+                <li class="breadcrumb-item"><a class="text-white" asp-controller="Home" asp-action="Pricing">Pricing</a></li>
+                <li class="breadcrumb-item text-white-50 active">Pricing</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Pricing Introduction -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-6 fw-bold mb-4">No Hidden Fees. No Surprises.</h2>
+                <p class="lead text-muted mb-5">
+                    We believe in transparent pricing. Every package includes everything you need
+                    to get started. Choose the plan that fits your needs and budget.
+                </p>
+
+                <div class="alert alert-info border-0 d-inline-block">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>Not sure which package is right?</strong>
+                    <a class="alert-link" asp-controller="Home" asp-action="Contact">Contact us</a> for a free consultation.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Website Development Pricing -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">Website Development</h2>
+            <p class="lead text-muted">Professional websites that convert visitors into customers</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Basic Package -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card h-100 border-0 shadow">
+                    <div class="card-header bg-white border-0 pt-4 text-center">
+                        <h4 class="fw-bold mb-3">Basic</h4>
+                        <div class="pricing-price text-primary mb-2">
+                            <span class="display-4 fw-bold">$499</span>
+                        </div>
+                        <p class="text-muted">Perfect for getting started</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>5 Pages</strong> (Home, About, Services, Contact, etc.)
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Mobile responsive design
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Contact form
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Basic SEO setup
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Social media integration
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                1 month support
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                2 revision rounds
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <i class="fas fa-times text-muted me-2"></i>
+                                Blog functionality
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <i class="fas fa-times text-muted me-2"></i>
+                                Advanced animations
+                            </li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Delivery: 2-3 weeks</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard Package (Featured) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card featured h-100 shadow-lg position-relative">
+                    <div class="position-absolute top-0 start-50 translate-middle">
+                        <span class="badge bg-warning text-dark px-4 py-2">MOST POPULAR</span>
+                    </div>
+                    <div class="card-header pricing-header text-white border-0 pt-5 text-center">
+                        <h4 class="fw-bold mb-3">Standard</h4>
+                        <div class="pricing-price mb-2">
+                            <span class="display-4 fw-bold">$999</span>
+                        </div>
+                        <p class="text-white-50">Best value for growing businesses</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>10 Pages</strong> + Blog
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Mobile responsive design
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Advanced contact forms
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>SEO optimization</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Social media integration
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>3 months support</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>3 revision rounds</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Blog functionality
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Google Analytics setup
+                            </li>
+                            <li class="mb-3 text-muted">
+                                <i class="fas fa-times text-muted me-2"></i>
+                                E-commerce features
+                            </li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-primary btn-lg" asp-controller="Contact" asp-action="Index">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Delivery: 3-4 weeks</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card h-100 border-0 shadow">
+                    <div class="card-header bg-white border-0 pt-4 text-center">
+                        <h4 class="fw-bold mb-3">Premium</h4>
+                        <div class="pricing-price text-primary mb-2">
+                            <span class="display-4 fw-bold">$1,999</span>
+                        </div>
+                        <p class="text-muted">Everything you need to succeed</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Unlimited Pages</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Premium responsive design
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Advanced functionality
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Full SEO package</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Social media integration
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>6 months support</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                <strong>Unlimited revisions</strong>
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Blog & news system
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Advanced animations
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                E-commerce ready
+                            </li>
+                            <li class="mb-3">
+                                <i class="fas fa-check text-success me-2"></i>
+                                Priority support
+                            </li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Delivery: 4-6 weeks</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- E-commerce Pricing -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">E-commerce Solutions</h2>
+            <p class="lead text-muted">Turn your products into profit with a complete online store</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <!-- Starter Store -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card h-100 border-0 shadow">
+                    <div class="card-header bg-white border-0 pt-4 text-center">
+                        <h4 class="fw-bold mb-3">Starter Store</h4>
+                        <div class="pricing-price text-primary mb-2">
+                            <span class="display-4 fw-bold">$799</span>
+                        </div>
+                        <p class="text-muted">Get your store online</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Up to 50 products</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Payment gateway integration</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Mobile responsive</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Basic product categories</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Shopping cart</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Basic SEO</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>2 months support</li>
+                            <li class="mb-3 text-muted"><i class="fas fa-times text-muted me-2"></i>Inventory management</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Delivery: 4-6 weeks</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Store -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card h-100 border-0 shadow">
+                    <div class="card-header bg-white border-0 pt-4 text-center">
+                        <h4 class="fw-bold mb-3">Business Store</h4>
+                        <div class="pricing-price text-primary mb-2">
+                            <span class="display-4 fw-bold">$1,499</span>
+                        </div>
+                        <p class="text-muted">For growing businesses</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Up to 200 products</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Multiple payment options</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Mobile responsive</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Advanced categories & filters</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Shopping cart & wishlist</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i><strong>Inventory management</strong></li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Email marketing integration</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Analytics dashboard</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>3 months support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Delivery: 6-8 weeks</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enterprise Store -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card pricing-card h-100 border-0 shadow">
+                    <div class="card-header bg-white border-0 pt-4 text-center">
+                        <h4 class="fw-bold mb-3">Enterprise Store</h4>
+                        <div class="pricing-price text-primary mb-2">
+                            <span class="display-4 fw-bold">$2,999+</span>
+                        </div>
+                        <p class="text-muted">Custom solutions</p>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Unlimited products</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Multi-currency support</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Advanced features</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Customer accounts</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Loyalty programs</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Advanced inventory</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Marketing automation</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>Priority support</li>
+                            <li class="mb-3"><i class="fas fa-check text-success me-2"></i>6 months support</li>
+                        </ul>
+                        <div class="d-grid">
+                            <a class="btn btn-outline-primary" asp-controller="Contact" asp-action="Index">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 pb-4 text-center">
+                        <small class="text-muted">Custom timeline</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Additional Services -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-6 fw-bold mb-3">Additional Services</h2>
+            <p class="lead text-muted">Enhance your project with these add-ons</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <i class="fas fa-palette fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Brand Identity</h5>
+                        <p class="text-muted mb-3">Logo & brand guidelines</p>
+                        <h4 class="text-primary fw-bold mb-3">From $299</h4>
+                        <a class="btn btn-outline-primary btn-sm" asp-controller="Services" asp-action="Index">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">SEO Services</h5>
+                        <p class="text-muted mb-3">Monthly optimization</p>
+                        <h4 class="text-primary fw-bold mb-3">From $399/mo</h4>
+                        <a class="btn btn-outline-primary btn-sm" asp-controller="Services" asp-action="Index">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <i class="fas fa-wrench fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Maintenance</h5>
+                        <p class="text-muted mb-3">Ongoing support & updates</p>
+                        <h4 class="text-primary fw-bold mb-3">From $99/mo</h4>
+                        <a class="btn btn-outline-primary btn-sm" asp-controller="Services" asp-action="Index">Learn More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <i class="fas fa-server fa-3x text-primary mb-3"></i>
+                        <h5 class="fw-bold mb-3">Hosting Setup</h5>
+                        <p class="text-muted mb-3">Domain & hosting assistance</p>
+                        <h4 class="text-primary fw-bold mb-3">From $99</h4>
+                        <a class="btn btn-outline-primary btn-sm" asp-controller="Services" asp-action="Index">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-center fw-bold mb-5">Pricing FAQs</h2>
+
+                <div class="accordion" id="pricingFAQ">
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Do I have to pay everything upfront?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                No! We typically ask for 50% to start and 50% upon completion. For larger projects,
+                                we can break payments into milestone-based installments. We understand trust must be earned.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Are there any hidden fees?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                Absolutely not. Our prices include everything listed in the package. The only additional
+                                costs would be third-party services you choose (like premium hosting or specific plugins),
+                                and we'll always get your approval first.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                Can I upgrade my package later?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                Yes! You can upgrade your package at any time. We'll credit what you've already paid
+                                and charge the difference. We can also add individual features à la carte if you don't
+                                need a full upgrade.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Do you offer refunds?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                            <div class="accordion-body">
+                                Deposits are non-refundable once work has commenced. However, we offer revisions to
+                                ensure you're satisfied. If you cancel mid-project, you'll only pay for work completed
+                                up to that point.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pricing-card {
+        transition: all 0.3s ease;
+    }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card.featured {
+            border: 3px solid var(--accent-gold);
+            transform: scale(1.05);
+        }
+
+            .pricing-card.featured:hover {
+                transform: scale(1.08) translateY(-5px);
+            }
+
+    .pricing-header {
+        background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-maroon) 100%);
+    }
+
+    .pricing-price {
+        color: var(--accent-gold);
+    }
+</style>

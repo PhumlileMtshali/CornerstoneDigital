@@ -1,0 +1,157 @@
+﻿@{
+    ViewData["Title"] = "Bank Transfer Details";
+    var paymentMethod = TempData["PaymentMethod"]?.ToString();
+    var amount = TempData["Amount"];
+    var reference = TempData["Reference"]?.ToString();
+}
+
+<style>
+    .bank-details-card {
+        background: linear-gradient(135deg, #6B2E3E 0%, #4A1F2C 100%);
+        color: white;
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+    }
+
+    .detail-box {
+        background: white;
+        color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px 0;
+    }
+
+    .copy-btn {
+        background: #C9A961;
+        border: none;
+        color: #4A1F2C;
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+        .copy-btn:hover {
+            background: #B39244;
+            transform: translateY(-2px);
+        }
+</style>
+
+<section class="bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <i class="fas fa-university fa-4x mb-3"></i>
+        <h1 class="display-4 fw-bold mb-3">Bank Transfer Details</h1>
+        <p class="lead">Please use the following details to complete your payment</p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="bank-details-card">
+                    <h3 class="mb-4">@(paymentMethod == "eft" ? "South African EFT Details" : "International Wire Transfer Details")</h3>
+
+                    <div class="detail-box">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <strong>Bank Name:</strong>
+                                <p class="mb-0">@(paymentMethod == "eft" ? "First National Bank (FNB)" : "First National Bank")</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>Account Name:</strong>
+                                <p class="mb-0">Cornerstone Digital (Pty) Ltd</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>Account Number:</strong>
+                                <p class="mb-0">
+                                    <span id="accountNumber">62XXXXXXXXX</span>
+                                    <button class="copy-btn btn-sm ms-2" onclick="copyToClipboard('accountNumber')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <strong>@(paymentMethod == "eft" ? "Branch Code:" : "SWIFT Code:")</strong>
+                                <p class="mb-0">
+                                    <span id="branchCode">@(paymentMethod == "eft" ? "250655" : "FIRNZAJJ")</span>
+                                    <button class="copy-btn btn-sm ms-2" onclick="copyToClipboard('branchCode')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </p>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <strong>Payment Reference (VERY IMPORTANT):</strong>
+                                <h4 class="text-primary mb-0">
+                                    <span id="reference">@reference</span>
+                                    <button class="copy-btn ms-2" onclick="copyToClipboard('reference')">
+                                        <i class="fas fa-copy"></i> Copy
+                                    </button>
+                                </h4>
+                            </div>
+                            <div class="col-12">
+                                <strong>Amount to Pay:</strong>
+                                <h3 class="text-success mb-0">$@amount</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning mt-4 text-start">
+                        <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Instructions:</h5>
+                        <ol class="mb-0">
+                            <li>Use the exact reference number: <strong>@reference</strong></li>
+                            <li>Payment will be verified within 1-2 business days</li>
+                            <li>You will receive a confirmation email once payment is verified</li>
+                            <li>Keep your proof of payment for your records</li>
+                            @if (paymentMethod == "wire")
+                            {
+                                <li>International wire transfers may take 3-5 business days to clear</li>
+                                <li>Additional bank fees may apply for international transfers</li>
+                            }
+                        </ol>
+                    </div>
+
+                    <div class="mt-4">
+                        <a asp-controller="Home" asp-action="Contact" class="btn btn-light btn-lg me-2">
+                            <i class="fas fa-envelope me-2"></i>Email Proof of Payment
+                        </a>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-home me-2"></i>Return Home
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm mt-4">
+                    <div class="card-body p-4 text-center">
+                        <h5 class="fw-bold mb-3">Need Help?</h5>
+                        <p>If you have any questions about the payment process, please contact us:</p>
+                        <p class="mb-0">
+                            <i class="fas fa-envelope me-2 text-primary"></i>payments@cornerstonedigital.com<br>
+                            <i class="fas fa-phone me-2 text-primary"></i>+27 XX XXX XXXX
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function copyToClipboard(elementId) {
+        const text = document.getElementById(elementId).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            // Show success message
+            const btn = event.target.closest('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            btn.style.background = '#28a745';
+
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '#C9A961';
+            }, 2000);
+        });
+    }
+</script>

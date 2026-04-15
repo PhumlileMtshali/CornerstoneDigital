@@ -1,0 +1,500 @@
+﻿@{
+    ViewData["Title"] = "Get a Quote";
+}
+
+<!-- Page Header -->
+<section class="page-header bg-primary text-white py-5">
+    <div class="container text-center py-4">
+        <h1 class="display-4 fw-bold mb-3">Get a Free Quote</h1>
+        <p class="lead">Tell us about your project and we'll provide a detailed proposal</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center bg-transparent mb-0">
+                <li class="breadcrumb-item"><a class="text-white" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="breadcrumb-item text-white-50 active">Get a Quote</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Quote Form Section -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row">
+            <!-- Form Column -->
+            <div class="col-lg-8 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body p-5">
+                        <h2 class="fw-bold mb-4">Project Details</h2>
+                        <p class="text-muted mb-4">
+                            The more details you provide, the more accurate your quote will be.
+                            We'll review your information and respond within 24 hours with a detailed proposal.
+                        </p>
+
+                        <form id="quoteForm">
+                            <!-- Personal Information -->
+                            <div class="mb-5">
+                                <h5 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-user me-2"></i>Your Information
+                                </h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name *</label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName"
+                                               placeholder="John Doe" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               placeholder="john@example.com" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone"
+                                               placeholder="+1 (555) 123-4567" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="company" class="form-label">Company/Business Name</label>
+                                        <input type="text" class="form-control" id="company" name="company"
+                                               placeholder="Your Company">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="website" class="form-label">Current Website (if any)</label>
+                                        <input type="url" class="form-control" id="website" name="website"
+                                               placeholder="https://www.yourwebsite.com">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project Type -->
+                            <div class="mb-5">
+                                <h5 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-clipboard-list me-2"></i>Project Type
+                                </h5>
+                                <label class="form-label">What service are you interested in? *</label>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="webDev" name="services" value="Website Development">
+                                            <label class="form-check-label w-100" for="webDev">
+                                                <i class="fas fa-laptop-code text-primary me-2"></i>
+                                                <strong>Website Development</strong>
+                                                <small class="d-block text-muted">Custom website design & development</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="ecommerce" name="services" value="E-commerce">
+                                            <label class="form-check-label w-100" for="ecommerce">
+                                                <i class="fas fa-shopping-cart text-primary me-2"></i>
+                                                <strong>E-commerce Store</strong>
+                                                <small class="d-block text-muted">Online store with payment integration</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="branding" name="services" value="Brand Identity">
+                                            <label class="form-check-label w-100" for="branding">
+                                                <i class="fas fa-palette text-primary me-2"></i>
+                                                <strong>Brand Identity</strong>
+                                                <small class="d-block text-muted">Logo & brand design</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="seo" name="services" value="SEO">
+                                            <label class="form-check-label w-100" for="seo">
+                                                <i class="fas fa-search text-primary me-2"></i>
+                                                <strong>SEO Optimization</strong>
+                                                <small class="d-block text-muted">Improve search rankings</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="maintenance" name="services" value="Maintenance">
+                                            <label class="form-check-label w-100" for="maintenance">
+                                                <i class="fas fa-wrench text-primary me-2"></i>
+                                                <strong>Website Maintenance</strong>
+                                                <small class="d-block text-muted">Ongoing support & updates</small>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-check service-option">
+                                            <input class="form-check-input" type="checkbox" id="other" name="services" value="Other">
+                                            <label class="form-check-label w-100" for="other">
+                                                <i class="fas fa-plus text-primary me-2"></i>
+                                                <strong>Other</strong>
+                                                <small class="d-block text-muted">Tell us what you need</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project Details -->
+                            <div class="mb-5">
+                                <h5 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-info-circle me-2"></i>Project Specifics
+                                </h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="pages" class="form-label">How many pages do you need?</label>
+                                        <select class="form-select" id="pages" name="pages">
+                                            <option value="">-- Select --</option>
+                                            <option value="1-5">1-5 pages</option>
+                                            <option value="6-10">6-10 pages</option>
+                                            <option value="11-20">11-20 pages</option>
+                                            <option value="20+">20+ pages</option>
+                                            <option value="Not sure">Not sure yet</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="timeline" class="form-label">When do you need this completed? *</label>
+                                        <select class="form-select" id="timeline" name="timeline" required>
+                                            <option value="">-- Select --</option>
+                                            <option value="ASAP">As soon as possible</option>
+                                            <option value="1 month">Within 1 month</option>
+                                            <option value="2-3 months">2-3 months</option>
+                                            <option value="3+ months">3+ months</option>
+                                            <option value="Flexible">Flexible timeline</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="budget" class="form-label">What's your budget range? *</label>
+                                        <select class="form-select" id="budget" name="budget" required>
+                                            <option value="">-- Select --</option>
+                                            <option value="Under $500">Under $500</option>
+                                            <option value="$500 - $1,000">$500 - $1,000</option>
+                                            <option value="$1,000 - $2,000">$1,000 - $2,000</option>
+                                            <option value="$2,000 - $5,000">$2,000 - $5,000</option>
+                                            <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                            <option value="Over $10,000">Over $10,000</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="content" class="form-label">Do you have content ready?</label>
+                                        <select class="form-select" id="content" name="content">
+                                            <option value="">-- Select --</option>
+                                            <option value="Yes, all ready">Yes, all content ready</option>
+                                            <option value="Some ready">Some content ready</option>
+                                            <option value="Need help">Need help creating content</option>
+                                            <option value="No content">No content yet</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Features Needed -->
+                            <div class="mb-5">
+                                <h5 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-puzzle-piece me-2"></i>Features You Need
+                                </h5>
+                                <p class="text-muted small mb-3">Select all that apply</p>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="contactForm" name="features" value="Contact Form">
+                                            <label class="form-check-label" for="contactForm">Contact Forms</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="blog" name="features" value="Blog">
+                                            <label class="form-check-label" for="blog">Blog/News Section</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gallery" name="features" value="Gallery">
+                                            <label class="form-check-label" for="gallery">Photo/Video Gallery</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="booking" name="features" value="Booking">
+                                            <label class="form-check-label" for="booking">Online Booking/Scheduling</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="payment" name="features" value="Payment">
+                                            <label class="form-check-label" for="payment">Payment Processing</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="members" name="features" value="Members">
+                                            <label class="form-check-label" for="members">User Login/Membership</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="multilingual" name="features" value="Multilingual">
+                                            <label class="form-check-label" for="multilingual">Multiple Languages</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="chat" name="features" value="Chat">
+                                            <label class="form-check-label" for="chat">Live Chat Support</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Project Description -->
+                            <div class="mb-5">
+                                <h5 class="fw-bold mb-3 text-primary">
+                                    <i class="fas fa-file-alt me-2"></i>Tell Us More
+                                </h5>
+                                <div class="mb-3">
+                                    <label for="description" class="form-label">Describe your project *</label>
+                                    <textarea class="form-control" id="description" name="description" rows="6"
+                                              placeholder="Tell us about your business, your goals for this project, who your target audience is, any specific features you need, websites you like, etc."
+                                              required></textarea>
+                                    <small class="text-muted">The more details, the better we can help you!</small>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="competitors" class="form-label">Competitor websites or inspiration</label>
+                                    <textarea class="form-control" id="competitors" name="competitors" rows="3"
+                                              placeholder="List any websites you like or want to compete with (one per line)"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Terms and Submit -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                                    <label class="form-check-label" for="acceptTerms">
+                                        I agree to the <a class="text-primary" asp-controller="Home" asp-action="Privacy">privacy policy</a> and
+                                        <a class="text-primary" asp-controller="Home" asp-action="Terms">terms of service</a> *
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">
+                                    <i class="fas fa-paper-plane me-2"></i>Get My Free Quote
+                                </button>
+                                <a class="btn btn-outline-primary btn-lg px-4" asp-controller="Home" asp-action="Pricing">
+                                    <i class="fas fa-tag me-2"></i>View Pricing
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px;">
+                    <!-- What to Expect -->
+                    <div class="card border-0 shadow mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-4">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                What Happens Next?
+                            </h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="step-badge">1</div>
+                                        </div>
+                                        <div>
+                                            <strong>We Review</strong>
+                                            <p class="small text-muted mb-0">Our team carefully reviews your request within 2-4 hours</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="step-badge">2</div>
+                                        </div>
+                                        <div>
+                                            <strong>We Respond</strong>
+                                            <p class="small text-muted mb-0">Get a detailed proposal within 24 hours</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="step-badge">3</div>
+                                        </div>
+                                        <div>
+                                            <strong>We Discuss</strong>
+                                            <p class="small text-muted mb-0">Schedule a free consultation call to finalize details</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="step-badge">4</div>
+                                        </div>
+                                        <div>
+                                            <strong>We Start</strong>
+                                            <p class="small text-muted mb-0">Once approved, we begin building your project</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Why Choose Us -->
+                    <div class="card border-0 bg-primary text-white shadow mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="fw-bold mb-3">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Our Guarantee
+                            </h5>
+                            <ul class="list-unstyled mb-0 small">
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>No pressure sales tactics</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Honest, transparent pricing</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Clear timeline and deliverables</li>
+                                <li class="mb-2"><i class="fas fa-check me-2"></i>Regular progress updates</li>
+                                <li><i class="fas fa-check me-2"></i>Your satisfaction guaranteed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Need Help -->
+                    <div class="card border-0 bg-light">
+                        <div class="card-body p-4 text-center">
+                            <i class="fas fa-question-circle fa-3x text-primary mb-3"></i>
+                            <h6 class="fw-bold mb-3">Need Help?</h6>
+                            <p class="small text-muted mb-3">
+                                Not sure what to include? Give us a call and we'll help you figure it out.
+                            </p>
+                            <a href="tel:+15551234567" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-phone me-2"></i>Call Us Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trust Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-3">
+                <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                <h4 class="fw-bold">50+</h4>
+                <p class="text-muted">Happy Clients</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-star fa-3x text-primary mb-3"></i>
+                <h4 class="fw-bold">98%</h4>
+                <p class="text-muted">Satisfaction Rate</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-clock fa-3x text-primary mb-3"></i>
+                <h4 class="fw-bold">24 Hours</h4>
+                <p class="text-muted">Response Time</p>
+            </div>
+            <div class="col-md-3">
+                <i class="fas fa-handshake fa-3x text-primary mb-3"></i>
+                <h4 class="fw-bold">Zero</h4>
+                <p class="text-muted">Hidden Fees</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        document.getElementById('quoteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get selected services
+            const services = Array.from(document.querySelectorAll('input[name="services"]:checked'))
+                .map(cb => cb.value);
+
+            // Get selected features
+            const features = Array.from(document.querySelectorAll('input[name="features"]:checked'))
+                .map(cb => cb.value);
+
+            // Get all form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                website: document.getElementById('website').value,
+                services: services,
+                pages: document.getElementById('pages').value,
+                timeline: document.getElementById('timeline').value,
+                budget: document.getElementById('budget').value,
+                content: document.getElementById('content').value,
+                features: features,
+                description: document.getElementById('description').value,
+                competitors: document.getElementById('competitors').value
+            };
+
+            // Log to console (you'll replace this with backend call later)
+            console.log('Quote Request:', formData);
+
+            // Show success message and redirect
+            alert('Thank you! Your quote request has been submitted. We\'ll respond within 24 hours with a detailed proposal.');
+
+            // Redirect to thank you page
+            window.location.href = '@Url.Action("ThankYou", "Home")';
+        });
+    </script>
+}
+
+<style>
+    .service-option {
+        padding: 1rem;
+        border: 2px solid var(--border-light);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+        .service-option:hover {
+            border-color: var(--accent-gold);
+            background-color: var(--bg-light);
+        }
+
+        .service-option input:checked ~ label {
+            color: var(--primary-burgundy);
+            font-weight: 600;
+        }
+
+    .step-badge {
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-maroon) 100%);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+</style>
