@@ -82,48 +82,29 @@ The project follows the **ASP.NET MVC architecture**, ensuring a clear separatio
 
 ---
 
-## 🧑‍💻 How to Run the Project Locally
+## 🚀 How to Run This Project Locally
 
-### Prerequisites
+This project cannot be deployed on GitHub Pages because it is a server-side ASP.NET MVC application. It must be run locally or on a .NET hosting environment.
 
-* Visual Studio 2022 or later
-* .NET SDK
-* SQL Server / SQL Server Express
+### Requirements:
+- Visual Studio 2022 (or later)
+- .NET SDK installed
+- ASP.NET and web development workload enabled
 
-### Steps
-
+### Steps:
 1. Clone the repository:
 
-```
 git clone https://github.com/PhumlileMtshali/CornerstoneDigital.git
-```
 
-2. Open the solution in Visual Studio
+2. Open Visual Studio
+3. Select “Open a project or solution”
+4. Open the `.sln` file from the project folder
+5. Press F5 to run the project
+6. The homepage loads from `Views/Home/Index.cshtml`
 
-3. Restore NuGet packages (automatic or manual)
+---
 
-4. Update the database connection string in `appsettings.json`
-
-5. Run database migrations:
-
-```
-Update-Database
-```
-
-or
-
-```
-dotnet ef database update
-```
-
-6. Run the application:
-
-* Press **F5** or click **Run**
-* Open in browser:
-
-```
-https://localhost:xxxx
-```
+This project runs on a local server using ASP.NET MVC and is not intended for static hosting platforms like GitHub Pages.
 
 ---
 
